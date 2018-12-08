@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::post('/upload', 'FileUploadController@upload')->name('upload');
 Route::get('/usermanage', 'UserManageController@index')->name('usermanage');
 Route::put('/userupdate', 'UserManageController@update')->name('userupdate');
+Route::delete('/userdelete', 'UserManageController@delete')->name('userdelete');
