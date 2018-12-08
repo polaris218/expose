@@ -30,7 +30,7 @@
                             <button
                                 class="btn btn-danger"
                                 type="submit"
-                                name="{{ $user['name'] }}"
+                                name=
                             >
                             Remove
                             </button>
