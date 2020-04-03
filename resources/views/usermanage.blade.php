@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="containter text-center">
-    <form action="{{ route('userupdate')}}" method="POST">
-            @method('PUT')
-            @csrf
+
+
             <table class="table">
                 <thead>
                     <tr>
@@ -27,18 +26,21 @@
                         @endif
                         <td>{{ $user["created_at"] }}</td>
                         <td>
-                            <button
-                                class="btn btn-danger"
-                                type="submit"
-                                name="{{ $user['name'] }}"
-                            >
-                            Remove
-                            </button>
+                            <form action="{{ route('userdelete', ['email' => $user['email']]) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button
+                                    class="btn btn-danger"
+                                    type="submit"
+                                >
+                                Remove
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-    </form>
+
 </div>
 @endsection

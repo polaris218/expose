@@ -21,4 +21,13 @@ class UserManageController extends Controller
         dd($update);
         return back();
     }
+
+    public function delete(Request $request)
+    {
+        $input = $request->all();
+        $user = User::where('email', $input['email'])->first();
+        $user->delete();
+        
+        return back();
+    }
 }
